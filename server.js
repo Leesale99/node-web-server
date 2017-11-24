@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
 const app = express();
 const partialsPath = path.join(__dirname, 'views', 'partials');
 
@@ -24,6 +25,6 @@ app.get('/about', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('App listening at port 3000!');
+app.listen(port, () => {
+  console.log(`App listening at port ${port}!`);
 });
